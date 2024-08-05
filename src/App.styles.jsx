@@ -5,4 +5,11 @@ export const AppContainer = styled.div`
     margin: 0 auto;
     padding: 20px;
     text-align: center;
+
+    .wrapper {
+        display: grid;
+        grid-template-columns: 2fr 3fr;
+        margin: 1rem;
+        gap: 20px;
+    }
 `
