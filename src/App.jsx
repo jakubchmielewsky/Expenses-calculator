@@ -4,6 +4,8 @@ import { AppContainer } from "./App.styles";
 
 //components
 import ExpenseForm from "./components/ExpenseForm/ExpenseForm"
+import Summary from "./components/Summary/Summary";
+
 
 function App() {
   return (
@@ -12,7 +14,7 @@ function App() {
       <section className="wrapper">
         <aside>
           <ExpenseForm/>
-          {/* <ExpensesSummary/> */}
+          <Summary/>
         </aside>
         {/* <ExpensesList/> */}
         <div></div>
