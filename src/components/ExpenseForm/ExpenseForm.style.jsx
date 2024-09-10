@@ -6,7 +6,8 @@ export const ExpenseFormContainer= styled.div`
     align-items: center;
     flex-direction: column;
     background-color: lightgray;
-    padding: 1.5rem;
+    padding: 15px;
     border-radius: 10px;
+    gap: 15px;
     
 `

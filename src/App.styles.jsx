@@ -10,6 +10,6 @@ export const AppContainer = styled.div`
         display: grid;
         grid-template-columns: 2fr 3fr;
         margin: 1rem;
-        gap: 20px;
+        gap: 25px;
     }
 `

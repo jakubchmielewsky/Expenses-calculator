@@ -15,8 +15,6 @@ export const ButtonContainer=styled.button`
 `
 
 export const InputGroupContainer=styled.div`
-    margin-top: 10px;
-    margin-bottom: 1rem;
     width: 100%;
 
     label{

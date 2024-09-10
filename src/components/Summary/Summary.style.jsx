@@ -1,8 +1,12 @@
 import styled from "styled-components";
 
 export const SummaryContainer=styled.section`
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: end;
     background-color: lightgray;
-    padding: 1.5rem;
+    padding: 15px;
     margin-top: 20px;
     border-radius: 10px;
 
@@ -11,14 +15,14 @@ export const SummaryContainer=styled.section`
         align-items: center;
         justify-content: flex-end;
         gap: 15px;
-        font-size: 1.2rem;
+        font-size: 1.1rem;
 
         input{
-            width: 80px;
+            width: 100px;
         }
         
     }
 
-    
+
     
 `
