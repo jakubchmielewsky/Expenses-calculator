@@ -10,12 +10,12 @@ export default function ExpenseItem({expense}){
     return(
         <ExpenseItemContainer>
             <div className="expense-details">
-                <h4>{"title"}</h4>
-                <small>{"date"}</small>
+                <h4>{expense.title}</h4>
+                <small>{expense.date}</small>
 
             </div>
             <div className="amount">
-                {`amount $`}
+                {`${expense.amount} $`}
 
             </div>
             <div className="buttons">

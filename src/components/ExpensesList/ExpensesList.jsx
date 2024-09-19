@@ -15,9 +15,13 @@ export default function ExpensesList() {
     return(
         <ExpensesListContainer>
             <ul className="items">
-                <ExpenseItem/>
-                <ExpenseItem/>
-                <ExpenseItem/>
+                {
+                    expenses.map((expense)=>(
+                        <ExpenseItem expense={expense} key={expense.id}/>
+                    ))
+                }
+                
+                
             </ul> 
             <Button className="deleteAll" text="Delete all" style={{backgroundColor: 'red'}}/>
         </ExpensesListContainer>
