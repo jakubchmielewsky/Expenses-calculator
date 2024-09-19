@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext,useEffect } from "react";
 
 //components
 import ExpenseItem from "../ExpenseItem/ExpenseItem";
@@ -12,6 +12,11 @@ import Button from "../Shared/Button";
 
 export default function ExpensesList() {
     const {expenses}= useContext(ExpenseContext);
+
+    useEffect(()=>{
+        localStorage.setItem("expenses",JSON.stringify(expenses));
+    },[expenses]);
+
     return(
         <ExpensesListContainer>
             <ul className="items">

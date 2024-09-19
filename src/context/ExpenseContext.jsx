@@ -2,8 +2,10 @@ import React,{createContext, useState} from "react";
 
 export const ExpenseContext = createContext();
 
+const initialExpenses = localStorage.getItem("expenses") ? JSON.parse(localStorage.getItem("expenses")) :[];
+
 export const ExpenseProvider = ({children}) =>{
-    const [expenses, setExpenses] = useState([]);
+    const [expenses, setExpenses] = useState(initialExpenses);
 
     const addExpense = (expense) => {
         setExpenses([...expenses, expense]);
