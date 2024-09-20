@@ -11,11 +11,15 @@ import { ExpensesListContainer } from "./ExpensesList.style";
 import Button from "../Shared/Button";
 
 export default function ExpensesList() {
-    const {expenses}= useContext(ExpenseContext);
+    const {expenses,setExpenses}= useContext(ExpenseContext);
 
     useEffect(()=>{
         localStorage.setItem("expenses",JSON.stringify(expenses));
     },[expenses]);
+
+    const handleDeleteAll=()=>{
+        setExpenses([]);
+    };
 
     
 
@@ -30,7 +34,7 @@ export default function ExpensesList() {
                 
                 
             </ul> 
-            <Button className="deleteAll" text="Delete all" style={{backgroundColor: 'red'}}/>
+            {expenses.length>0 && <Button className="deleteAll" text="Delete all" style={{backgroundColor: 'red'}} onClick={handleDeleteAll}/>}
         </ExpensesListContainer>
     )
 }

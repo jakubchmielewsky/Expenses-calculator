@@ -1,14 +1,14 @@
-import React from "react";
+import React,{ useContext } from "react";
 
 //style
 import { ExpenseItemContainer } from "./ExpenseItem.style";
 
 //components
 import Button from "../Shared/Button";
-import { useContext } from "react";
 
 //context
 import { ExpenseContext } from "../../context/ExpenseContext";
+
 
 export default function ExpenseItem({expense}){
     const {removeExpense}=useContext(ExpenseContext);

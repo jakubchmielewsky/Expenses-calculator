@@ -16,7 +16,7 @@ export const ExpenseProvider = ({children}) =>{
     };
 
     return(
-        <ExpenseContext.Provider value={{expenses, addExpense, removeExpense}}>
+        <ExpenseContext.Provider value={{expenses, addExpense, removeExpense, setExpenses}}>
             {children}
         </ExpenseContext.Provider>
     );
