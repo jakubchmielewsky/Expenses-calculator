@@ -4,7 +4,7 @@ import React, { useContext,useEffect } from "react";
 import ExpenseItem from "../ExpenseItem/ExpenseItem";
 
 //context
-import { ExpenseContext } from "../../context/ExpensesContext";
+import { ExpenseContext } from "../../context/Context";
 
 //style
 import { ExpensesListContainer } from "./ExpensesList.style";

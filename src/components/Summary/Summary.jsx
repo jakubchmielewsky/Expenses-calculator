@@ -1,11 +1,11 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext, useState } from "react";
 import { SummaryContainer } from "./Summary.style";
 
 //components
 import InputGroup from "../Shared/InputGroup";
 
 //context
-import { ExpenseContext } from "../../context/ExpensesContext";
+import { ExpenseContext } from "../../context/Context";
 
 export default function Summary(){
     const {expenses} = useContext(ExpenseContext);

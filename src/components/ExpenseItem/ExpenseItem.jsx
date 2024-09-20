@@ -7,14 +7,23 @@ import { ExpenseItemContainer } from "./ExpenseItem.style";
 import Button from "../Shared/Button";
 
 //context
-import { ExpenseContext } from "../../context/ExpensesContext";
+import { ExpenseContext } from "../../context/Context";
 
 
 export default function ExpenseItem({expense}){
-    const {removeExpense}=useContext(ExpenseContext);
+    const {expenses,removeExpense,setDate,setTitle,setAmount,setId,setEdit}=useContext(ExpenseContext);
 
-    const handleDeleteButton=()=>{
+    const handleDelete=()=>{
         removeExpense(expense.id);
+    }
+
+    const handleEdit=()=>{
+        let editedExpense = expenses.find((exp)=> exp.id===expense.id);
+        setDate(editedExpense.date);
+        setTitle(editedExpense.title);
+        setAmount(editedExpense.amount);
+        setId(expense.id);
+        setEdit(true);
     }
 
     return(
@@ -29,8 +38,8 @@ export default function ExpenseItem({expense}){
 
             </div>
             <div className="buttons">
-                <Button text="edit" style={{backgroundColor: 'yellow', color: 'black'}}/>
-                <Button text="delete" style={{backgroundColor: 'red'}} onClick={handleDeleteButton}/>
+                <Button text="edit" style={{backgroundColor: 'yellow', color: 'black'}} onClick={handleEdit}/>
+                <Button text="delete" style={{backgroundColor: 'red'}} onClick={handleDelete}/>
             </div>
         </ExpenseItemContainer>
     )

@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext} from "react";
 import {v4 as uuidV4} from "uuid";
 
 //components
@@ -7,12 +7,12 @@ import Button from "../Shared/Button";
 import InputGroup from "../Shared/InputGroup"
 
 //context
-import { ExpenseContext } from "../../context/ExpensesContext";
+import { ExpenseContext } from "../../context/Context";
 
 
 
 export default function ExpenseForm() {
-    const {addExpense,date,setDate,title,setTitle,amount,setAmount} = useContext(ExpenseContext);
+    const {expenses,setExpenses,addExpense,date,setDate,title,setTitle,amount,setAmount,edit,setEdit,id} = useContext(ExpenseContext);
 
 
 
@@ -28,13 +28,20 @@ export default function ExpenseForm() {
         setAmount(e.target.value);
     };
 
-    const handleAddClick= ()=>{
+    const handleAdd= ()=>{
         const newExpense= {id:uuidV4(),date,title,amount};
         addExpense(newExpense);
 
         setTitle("");
         setAmount("");
     };
+
+    const handleEdit=()=>{
+        const tempExpenses=expenses.map(expense=> expense.id===id ? {...expense,date,title,amount} : expense);
+        setExpenses(tempExpenses);
+
+        setEdit(false);
+    }
 
     
 
@@ -43,7 +50,8 @@ export default function ExpenseForm() {
             <InputGroup label={"Date"} onChange={handleDateChange} value={date} type={"date"}/>
             <InputGroup label={"Expense"} onChange={handleTitleChange} value={title} type={"text"}/>
             <InputGroup label={"Amount"} onChange={handleAmountChange} value={amount} type={"number"}/>
-            <Button style={{backgroundColor: 'green'}} text="Add" onClick={handleAddClick}/>
+            {edit?<Button style={{backgroundColor: 'green'}} text={"Edit"} onClick={handleEdit}/>:
+            <Button style={{backgroundColor: 'green'}} text={"Add"} onClick={handleAdd}/>}
         </ExpenseFormContainer>
     )
 }
