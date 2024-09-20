@@ -12,7 +12,7 @@ export const ExpenseProvider = ({children}) =>{
     };
 
     const removeExpense= (index) => {
-        setExpenses(expenses.filter((_,i) => i !== index));
+        setExpenses(expenses.filter((expense) => expense.id !== index));
     };
 
     return(

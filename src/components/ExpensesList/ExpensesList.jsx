@@ -17,6 +17,8 @@ export default function ExpensesList() {
         localStorage.setItem("expenses",JSON.stringify(expenses));
     },[expenses]);
 
+    
+
     return(
         <ExpensesListContainer>
             <ul className="items">
