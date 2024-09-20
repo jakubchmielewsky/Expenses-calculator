@@ -3,7 +3,7 @@ import "./App.css"
 import ExpensesCalculator from "./ExpensesCalculator";
 
 //context
-import { ExpenseProvider } from "./context/ExpenseContext";
+import { ExpenseProvider } from "./context/ExpensesContext";
 
 
 function App() {

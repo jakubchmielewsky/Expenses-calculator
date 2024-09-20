@@ -7,16 +7,12 @@ import Button from "../Shared/Button";
 import InputGroup from "../Shared/InputGroup"
 
 //context
-import { ExpenseContext } from "../../context/ExpenseContext";
+import { ExpenseContext } from "../../context/ExpensesContext";
 
 
 
-export default function ExpenseForm(params) {
-    const {addExpense} = useContext(ExpenseContext);
-
-    const [date,setDate]= useState("");
-    const [title,setTitle]= useState("");
-    const [amount,setAmount]= useState("");
+export default function ExpenseForm() {
+    const {addExpense,date,setDate,title,setTitle,amount,setAmount} = useContext(ExpenseContext);
 
 
 

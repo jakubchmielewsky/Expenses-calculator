@@ -7,7 +7,7 @@ import { ExpenseItemContainer } from "./ExpenseItem.style";
 import Button from "../Shared/Button";
 
 //context
-import { ExpenseContext } from "../../context/ExpenseContext";
+import { ExpenseContext } from "../../context/ExpensesContext";
 
 
 export default function ExpenseItem({expense}){

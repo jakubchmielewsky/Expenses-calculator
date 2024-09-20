@@ -7,6 +7,11 @@ const initialExpenses = localStorage.getItem("expenses") ? JSON.parse(localStora
 export const ExpenseProvider = ({children}) =>{
     const [expenses, setExpenses] = useState(initialExpenses);
 
+    //form state
+    const [date,setDate]= useState("");
+    const [title,setTitle]= useState("");
+    const [amount,setAmount]= useState("");
+
     const addExpense = (expense) => {
         setExpenses([...expenses, expense]);
     };
@@ -16,7 +21,19 @@ export const ExpenseProvider = ({children}) =>{
     };
 
     return(
-        <ExpenseContext.Provider value={{expenses, addExpense, removeExpense, setExpenses}}>
+        <ExpenseContext.Provider 
+            value={{expenses, 
+                addExpense, 
+                removeExpense, 
+                setExpenses,
+                date,
+                setDate,
+                title,
+                setTitle,
+                amount,
+                setAmount
+            }}
+        >
             {children}
         </ExpenseContext.Provider>
     );
